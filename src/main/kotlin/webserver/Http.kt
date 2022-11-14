@@ -11,6 +11,3 @@ enum class Status(val code: Int) {
   FORBIDDEN(403),
   NOT_FOUND(404)
 }
-
-
-

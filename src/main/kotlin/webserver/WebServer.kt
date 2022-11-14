@@ -67,10 +67,11 @@ val funcs = listOf(
   "/" to ::homePageHandler,
   "/computing" to ::homePageHandler,
   "/say-hello" to ::helloHandler,
-  "/exam-marks" to requireToken("password1", ::restrictedPageHandler))
+  "/exam-marks" to requireToken("password1", ::restrictedPageHandler)
+)
 
-fun configureRoutes (list: List<Pair<String, HttpHandler>>): HttpHandler{
-  return fun(request: Request): Response{
+fun configureRoutes(list: List<Pair<String, HttpHandler>>): HttpHandler {
+  return fun(request: Request): Response {
     val path = path(request.url)
     val pair = list.filter { it.first == path }
     return if (pair.isEmpty()) {
@@ -81,7 +82,7 @@ fun configureRoutes (list: List<Pair<String, HttpHandler>>): HttpHandler{
   }
 }
 
-fun requireToken (token: String, wrapped: HttpHandler): HttpHandler {
+fun requireToken(token: String, wrapped: HttpHandler): HttpHandler {
   return fun(request: Request): Response {
     val auth = request.authToken
     return if (auth == token) {
