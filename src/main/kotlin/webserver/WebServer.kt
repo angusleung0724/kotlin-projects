@@ -33,7 +33,7 @@ fun homePageHandler(request: Request): Response {
   }
 }
 
-fun helloHandler (request: Request):Response {
+fun helloHandler(request: Request): Response {
   var name = "World" // default value for name is world
   var upper = false
   for (i in (queryParams(request.url))) {
@@ -51,9 +51,9 @@ fun helloHandler (request: Request):Response {
   }
 }
 
-fun restrictedPageHandler (request:Request): Response = Response(Status.OK,"This is very secret.")
+fun restrictedPageHandler(request: Request): Response = Response(Status.OK, "This is very secret.")
 
-fun route (request: Request): Response {
+fun route(request: Request): Response {
   return if (path(request.url) == "/say-hello") {
     helloHandler(request)
   } else {
@@ -61,19 +61,18 @@ fun route (request: Request): Response {
   }
 }
 
-
 typealias HttpHandler = (Request) -> Response
 
 val funcs = listOf(
   "/" to ::homePageHandler,
   "/computing" to ::homePageHandler,
   "/say-hello" to ::helloHandler,
-  "/exam-marks" to requireToken("password1",::restrictedPageHandler))
+  "/exam-marks" to requireToken("password1", ::restrictedPageHandler))
 
-fun configureRoutes (list: List<Pair<String,HttpHandler>>):HttpHandler{
-  return fun(request:Request):Response{
+fun configureRoutes (list: List<Pair<String, HttpHandler>>): HttpHandler{
+  return fun(request: Request): Response{
     val path = path(request.url)
-    val pair = list.filter {it.first == path}
+    val pair = list.filter { it.first == path }
     return if (pair.isEmpty()) {
       Response(Status.NOT_FOUND)
     } else {
@@ -83,7 +82,7 @@ fun configureRoutes (list: List<Pair<String,HttpHandler>>):HttpHandler{
 }
 
 fun requireToken (token: String, wrapped: HttpHandler): HttpHandler {
-  return fun(request:Request):Response {
+  return fun(request: Request): Response {
     val auth = request.authToken
     return if (auth == token) {
       wrapped(request)
