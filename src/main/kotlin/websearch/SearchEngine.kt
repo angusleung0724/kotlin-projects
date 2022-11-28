@@ -10,7 +10,6 @@ class SearchEngine (val corpus: Map<URL,WebPage>) {
     for (entries in indexMap) {
       index.put(entries.key, rank(entries.value))
     }
-
   }
 
   private fun allwords(url: URL, text: List<String>): MutableList<Pair<String, URL>> {

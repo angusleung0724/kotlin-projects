@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="websearch.WebPageTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-11-28T17:36:34" hostname="dyn3147-232.wlan.ic.ac.uk" time="0.0">
+<testsuite name="websearch.WebPageTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-11-28T17:49:41" hostname="dyn3147-232.wlan.ic.ac.uk" time="0.0">
   <properties/>
   <testcase name="initializationError" classname="websearch.WebPageTest" time="0.0">
     <failure message="java.lang.UnsupportedClassVersionError: websearch/WebPageTest has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0" type="java.lang.UnsupportedClassVersionError">java.lang.UnsupportedClassVersionError: websearch/WebPageTest has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
