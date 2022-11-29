@@ -2,7 +2,7 @@ package websearch
 
 import org.jsoup.Jsoup
 
-class SearchEngine (val corpus: Map<URL,WebPage>) {
+class SearchEngine(val corpus: Map<URL, WebPage>) {
   var index = mutableMapOf<String, List<SearchResult>>()
 
   fun compileIndex() {
@@ -49,11 +49,11 @@ class SearchResult(val url: URL, val numRefs: Int) {
 
 class SearchResultsSummary(val query: String, val results: List<SearchResult>) {
   override fun toString(): String {
-      val s = StringBuilder()
-      s.append("Results for \"$query\"")
-      for (res in results) {
-        s.append("\n${res.url} - ${res.numRefs} references")
-      }
-      return s.toString()
+    val s = StringBuilder()
+    s.append("Results for \"$query\"")
+    for (res in results) {
+      s.append("\n${res.url} - ${res.numRefs} references")
     }
+    return s.toString()
   }
+}

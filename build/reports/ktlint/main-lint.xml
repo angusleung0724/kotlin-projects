@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="8.0">
+    <file name="src/main/kotlin/websearch/JsoupExamples.kt">
+        <error line="41" column="1" severity="error" message="Needless blank line(s)" source="no-consecutive-blank-lines" />
+    </file>
+    <file name="src/main/kotlin/websearch/SearchEngine.kt">
+        <error line="1" column="1" severity="error" message="File must end with a newline (\n)" source="final-newline" />
+        <error line="3" column="1" severity="error" message="Unused import" source="no-unused-imports" />
+        <error line="5" column="19" severity="error" message="Unexpected spacing before &quot;(&quot;" source="paren-spacing" />
+        <error line="5" column="41" severity="error" message="Missing spacing after &quot;,&quot;" source="comma-spacing" />
+        <error line="47" column="52" severity="error" message="Unnecessary block (&quot;{}&quot;)" source="no-empty-class-body" />
+        <error line="52" column="1" severity="error" message="Unexpected indentation (6) (should be 4)" source="indent" />
+        <error line="53" column="1" severity="error" message="Unexpected indentation (6) (should be 4)" source="indent" />
+        <error line="54" column="1" severity="error" message="Unexpected indentation (6) (should be 4)" source="indent" />
+        <error line="55" column="1" severity="error" message="Unexpected indentation (8) (should be 6)" source="indent" />
+        <error line="56" column="1" severity="error" message="Unexpected indentation (6) (should be 4)" source="indent" />
+        <error line="57" column="1" severity="error" message="Unexpected indentation (6) (should be 4)" source="indent" />
+        <error line="58" column="1" severity="error" message="Unexpected indentation (4) (should be 2)" source="indent" />
+        <error line="59" column="1" severity="error" message="Unexpected indentation (2) (should be 0)" source="indent" />
+    </file>
+    <file name="src/main/kotlin/websearch/Web.kt">
+        <error line="6" column="15" severity="error" message="Unexpected spacing before &quot;(&quot;" source="paren-spacing" />
+        <error line="13" column="1" severity="error" message="Unexpected blank line(s) before &quot;}&quot;" source="no-blank-line-before-rbrace" />
+        <error line="16" column="14" severity="error" message="Unexpected spacing before &quot;(&quot;" source="paren-spacing" />
+        <error line="38" column="1" severity="error" message="Unexpected blank line(s) before &quot;}&quot;" source="no-blank-line-before-rbrace" />
+        <error line="41" column="1" severity="error" message="Needless blank line(s)" source="no-consecutive-blank-lines" />
+    </file>
+    <file name="src/main/kotlin/websearch/WebCrawler.kt">
+        <error line="3" column="1" severity="error" message="Unused import" source="no-unused-imports" />
+        <error line="5" column="17" severity="error" message="Unexpected spacing before &quot;(&quot;" source="paren-spacing" />
+        <error line="24" column="50" severity="error" message="Missing spacing around &quot;{&quot;" source="curly-spacing" />
+        <error line="24" column="63" severity="error" message="Missing spacing before &quot;}&quot;" source="curly-spacing" />
+        <error line="26" column="16" severity="error" message="Missing spacing after &quot;catch&quot;" source="keyword-spacing" />
+    </file>
+</checkstyle>

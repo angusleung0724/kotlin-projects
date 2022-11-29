@@ -1,9 +1,10 @@
 package websearch
+
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
 
-data class URL (val url: String) {
+data class URL(val url: String) {
 
   override fun toString() = url
   fun download(): WebPage {
@@ -13,7 +14,7 @@ data class URL (val url: String) {
 
 }
 
-class WebPage (val document: Document) {
+class WebPage(val document: Document) {
   fun extractWords(): List<String> {
     val text = document.text().lowercase()
     return text.replace(",", "").replace(".", "").split(" ")
@@ -35,6 +36,4 @@ class WebPage (val document: Document) {
     }
     return result
   }
-
 }
-
