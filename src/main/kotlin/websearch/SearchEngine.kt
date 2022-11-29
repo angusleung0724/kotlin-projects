@@ -1,5 +1,7 @@
 package websearch
 
+import org.jsoup.Jsoup
+
 class SearchEngine (val corpus: Map<URL,WebPage>) {
   var index = mutableMapOf<String, List<SearchResult>>()
 
@@ -22,14 +24,23 @@ class SearchEngine (val corpus: Map<URL,WebPage>) {
 
   fun rank(list: List<URL>): List<SearchResult> {
     val results = mutableListOf<SearchResult>()
+    val done = mutableSetOf<URL>()
     for (n in list) {
-      results.add(SearchResult(n, list.count { it == n }))
+      if (n !in done) {
+        results.add(SearchResult(n, list.count { it == n }))
+        done.add(n)
+      }
     }
     return results.sortedByDescending { it.numRefs }
   }
 
   fun searchFor(string: String): SearchResultsSummary {
-    return SearchResultsSummary(string, index[string]!!)
+    val results = index[string]
+    return if (results != null) {
+      SearchResultsSummary(string, results)
+    } else {
+      SearchResultsSummary(string, emptyList())
+    }
   }
 }
 
@@ -38,11 +49,11 @@ class SearchResult(val url: URL, val numRefs: Int) {
 
 class SearchResultsSummary(val query: String, val results: List<SearchResult>) {
   override fun toString(): String {
-    val s = StringBuilder()
-    s.append("Results for \"$query\"")
-    for (res in results) {
-      s.append("${res.url} - ${res.numRefs} references")
+      val s = StringBuilder()
+      s.append("Results for \"$query\"")
+      for (res in results) {
+        s.append("\n${res.url} - ${res.numRefs} references")
+      }
+      return s.toString()
     }
-    return s.toString()
   }
-}

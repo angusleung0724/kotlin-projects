@@ -49,30 +49,30 @@ class WebPageTest {
 
   /*** For the extension... ***/
 
-//    @Test
-//    fun `extracts links from page`() {
-//
-//        val html =
-//            """
-//            <html>
-//              <head>
-//                <title>Simple Page</title>
-//              </head>
-//              <body>
-//                <p>This is a simple <a href="https://en.wikipedia.org/wiki/HTML">HTML</a> document.</p>
-//                <p>But it has two <a href="https://www.w3schools.com/html/html_links.asp">links</a>.</p>
-//              </body>
-//            </html>"""
-//
-//        val htmlDocument: Document = Jsoup.parse(html)
-//
-//        val webPage = WebPage(htmlDocument)
-//        assertEquals(
-//            listOf(
-//                URL("https://en.wikipedia.org/wiki/HTML"),
-//                URL("https://www.w3schools.com/html/html_links.asp")
-//            ),
-//            webPage.extractLinks()
-//        )
-//    }
+    @Test
+    fun `extracts links from page`() {
+
+        val html =
+            """
+            <html>
+              <head>
+                <title>Simple Page</title>
+              </head>
+              <body>
+                <p>This is a simple <a href="https://en.wikipedia.org/wiki/HTML">HTML</a> document.</p>
+                <p>But it has two <a href="https://www.w3schools.com/html/html_links.asp">links</a>.</p>
+              </body>
+            </html>"""
+
+        val htmlDocument: Document = Jsoup.parse(html)
+
+        val webPage = WebPage(htmlDocument)
+        assertEquals(
+            listOf(
+                URL("https://en.wikipedia.org/wiki/HTML"),
+                URL("https://www.w3schools.com/html/html_links.asp")
+            ),
+            webPage.extractLinks()
+        )
+    }
 }
