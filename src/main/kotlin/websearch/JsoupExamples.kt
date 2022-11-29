@@ -38,7 +38,6 @@ fun main() {
     println(link)
   }
 
-
   // A different approach to dealing with the nullable value is to use the "safe-call" operator ?.
   // This says, if firstTag is null, don't call .attr(), just return null.
   println(firstTag?.attr("href"))

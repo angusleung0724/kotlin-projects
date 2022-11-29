@@ -11,7 +11,6 @@ data class URL(val url: String) {
     val downloadedDocument = Jsoup.connect(url).get()
     return WebPage(downloadedDocument)
   }
-
 }
 
 class WebPage(val document: Document) {

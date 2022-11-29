@@ -1,7 +1,5 @@
 package websearch
 
-import org.jsoup.Jsoup
-
 class SearchEngine(val corpus: Map<URL, WebPage>) {
   var index = mutableMapOf<String, List<SearchResult>>()
 
@@ -44,8 +42,7 @@ class SearchEngine(val corpus: Map<URL, WebPage>) {
   }
 }
 
-class SearchResult(val url: URL, val numRefs: Int) {
-}
+class SearchResult(val url: URL, val numRefs: Int)
 
 class SearchResultsSummary(val query: String, val results: List<SearchResult>) {
   override fun toString(): String {

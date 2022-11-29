@@ -1,7 +1,5 @@
 package websearch
 
-import org.jsoup.UnsupportedMimeTypeException
-
 class WebCrawler(val start: URL) {
   private val limit = 50
   val index = mutableMapOf<URL, WebPage>()
