@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="journeyplan.ExtensionsTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-11-22T13:00:42" hostname="dyn3157-190.wlan.ic.ac.uk" time="0.069">
+  <properties/>
+  <testcase name="can optimise for duration" classname="journeyplan.ExtensionsTest" time="0.036"/>
+  <testcase name="does not offer routes with suspended lines" classname="journeyplan.ExtensionsTest" time="0.002"/>
+  <testcase name="does not avoid closed stations if interchange not required" classname="journeyplan.ExtensionsTest" time="0.028"/>
+  <testcase name="avoids interchange at closed stations" classname="journeyplan.ExtensionsTest" time="0.001"/>
+  <testcase name="can optimise for number of changes" classname="journeyplan.ExtensionsTest" time="0.001"/>
+  <testcase name="can find multiple routes between stations" classname="journeyplan.ExtensionsTest" time="0.001"/>
+  <system-out><![CDATA[[South Kensington to Oxford Circus - 10 minutes, 1 changes
+ - South Kensington to Green Park by Piccadilly Line
+ - Green Park to Oxford Circus by Victoria Line, South Kensington to Oxford Circus - 14 minutes, 1 changes
+ - South Kensington to Victoria by District Line
+ - Victoria to Oxford Circus by Victoria Line]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
